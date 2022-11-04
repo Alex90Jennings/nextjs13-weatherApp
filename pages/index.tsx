@@ -4,8 +4,6 @@ import { useState } from 'react'
 
 const API_KEY = "70f36b3f5a180a668c78ff2ba93c0038"
 
-console.log(API_KEY)
-
 const Home: NextPage = () => {
   const[ cityInput, setCityInput ] = useState('')
   const [ weatherData, setWeatherData ] = useState<any>({})
@@ -26,8 +24,6 @@ const Home: NextPage = () => {
       console.log(err)
     }
   }
-
-  console.log(weatherData)
 
   return (
     <div style={{
