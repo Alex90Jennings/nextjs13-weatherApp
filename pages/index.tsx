@@ -39,24 +39,24 @@ const Home: NextPage = () => {
         transform: 'translate(-50%, -50%)'
       }}>
         <Paper withBorder p='lg' style={{maxWidth: '500px'}}>
-          <Group position='apart'>
+          <Group position='center'>
             <Text size='xl' weight={500}>
               Get The Weather!
             </Text>
           </Group>
-          <Group position='apart'>
+          <Group position='center'>
             <Text size='lg'>
               Enter a city, and get the weather below!
             </Text>
           </Group>
-          <Group position='apart' mb='xs'>
+          <Group position='center' mb='xs'>
             <TextInput 
               label='City Name' 
               placeholder='ex. London'
               onChange={(e) => setCityInput(e.target.value)}
               />
           </Group>
-          <Group position='apart'>
+          <Group position='center'>
             <Button 
               variant='gradient' 
               size='md'
@@ -66,17 +66,21 @@ const Home: NextPage = () => {
           </Group>
           {Object.keys(weatherData).length !== 0 ? 
             <>
-              <Group position='left'>
-                <Text>
+              <Group position='center'>
+                <Text size={"lg"} weight={500}>
                   {weatherData.name} Weather
                 </Text>
+              </Group>
+              <Group position='center'>
+                <img 
+                  src={"http://openweathermap.org/img/wn/" + weatherData.weather[0].icon + "@4x.png"} 
+                  alt="weather icon" 
+                  width={"100px"}
+                  height={"100px"}
+                />
+              </Group>
+              <Group position='center'>
                 <Text size={"lg"} weight={500}>
-                  <img 
-                    src={"http://openweathermap.org/img/wn/" + weatherData.weather[0].icon + "@4x.png"} 
-                    alt="weather icon" 
-                    width={"100px"}
-                    height={"100px"}
-                  />
                   It is currently {weatherData.main.temp} &deg;C
                 </Text>
               </Group>
